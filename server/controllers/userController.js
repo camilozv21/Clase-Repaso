@@ -15,7 +15,6 @@ const controllers = {
     },
     getUserByPk: async (req, res) => {
         const id = req.params.id;
-        console.log(id);
         try {
             const user = await User.findById(id);
             res.json({ user })
