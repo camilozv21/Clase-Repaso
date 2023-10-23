@@ -1,11 +1,11 @@
 import { Home } from "../components/Home"
-import NavBar from "../components/NavBar"
+import { RegisterForm } from "../components/RegisterForm"
 
 export const HomePage = () => {
   return (
     <>
-        <NavBar />
         <Home />
+        <RegisterForm />
     </>
   )
 }
