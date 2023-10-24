@@ -11,7 +11,6 @@ export const CardsPage = () => {
             try {
                 const response = await axios.get('https://rickandmortyapi.com/api/character/');
                 setCharacters(response.data.results)
-                console.log(response.data.results)
             } catch (error) {
                 console.log(error)
             }
@@ -19,8 +18,12 @@ export const CardsPage = () => {
         getCharacters()
     }, [])
   return (
-    <>
-        <div>Cards</div>
-    </>
+    <div className="container d-flex justify-content-center coustum-card">
+        {characters.map(el => (
+            <Card key={el.id} style={{ width: '18rem' }}>
+                <CardApi imag={el.image} name={el.name} species={el.species} status={el.status} location={el.location.name} origin={el.origin.name} />
+            </Card>
+        ))}
+    </div>
   )
 }
